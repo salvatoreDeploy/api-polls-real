@@ -8,3 +8,4 @@
 - tsx
 - @types/node
 - fastify
+- @fastify/cookie

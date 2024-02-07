@@ -8,10 +8,19 @@ datasource db {
 }
 
 model Poll {
-  id        String   @id @default(cuid())
+  id        String       @id @default(cuid())
   title     String
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
+  createdAt DateTime     @default(now()) @map("created_at")
+  updatedAt DateTime     @updatedAt @map("updated_at")
+  options   PollOption[]
 
   @@map("poll")
+}
+
+model PollOption {
+  id           String @id @default(cuid())
+  title        String
+  pollOptionId String
+
+  poll Poll @relation(fields: [pollOptionId], references: [id])
 }

@@ -5,5 +5,13 @@ POST {{baseUrl}}/polls
 Content-Type: application/json
 
 {
-  "title": "Teste"
+  "title": "Qual melhor framework do node.js?",
+  "options": ["Express", "Fastify", "Nest"]
 }
+
+###
+
+# @name get_details_poll
+GET {{baseUrl}}/polls/details/clsb5v4wm00008su13wpgarh1
+Content-Type: application/json
+
